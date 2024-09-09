@@ -15,8 +15,8 @@
                     </button>
                 </div>
                 <a href="{{ url('/') }}" class="py-1 px-2 text-white font-bold">
-                    <img src="{{ asset('assets/img/AirBagages_Visual.svg') }}" class="" alt="Logo"
-                        style="width: 250px">
+                    <img src="{{ asset('images/carreservation.jpeg') }}" class="" alt="Logo"
+                        style="width: 150px">
                 </a>
             </div>
             @guest
@@ -114,15 +114,12 @@
 
             <div class="mt-8 w-full">
                 <a class="py-3 px-3 block no-underline font-bold rounded-sm hover:bg-blue-950 hover:text-white hover:no-underline hover:border-t-4 link {{ request()->is('/') ? 'active' : '' }}"
-                    href="{{ url('/') }}">Envoyer un bagage</a>
+                    href="{{ url('/') }}">Reserver</a>
                 <a class="py-3 px-3 block no-underline font-bold rounded-sm hover:bg-blue-950 hover:text-white hover:no-underline hover:border-t-4 link {{ request()->is('suivre_son_colis') ? 'active' : '' }}"
-                    href="{{ url('suivre_son_colis') }}">Suivre mon bagage</a>
+                    href="{{ url('suivre_son_colis') }}">Mon compte client</a>
                 <a class="py-3 px-3 block no-underline font-bold rounded-sm hover:bg-blue-950 hover:text-white hover:no-underline hover:border-t-4 link {{ request()->is('demande_de_devis') ? 'active' : '' }}"
-                    href="{{ url('demande_de_devis') }}">Air Bagages Plus</a>
-                <a class="py-3 px-3 block no-underline font-bold rounded-sm hover:bg-blue-950 hover:text-white hover:no-underline hover:border-t-4 link {{ request()->is('client/espace_client') || request()->is('login') ? 'active' : '' }}"
-                    href="{{ url('client/espace_client') }}">Mon Compte Client</a>
-                <a class="py-3 px-3 block no-underline font-bold rounded-sm hover:bg-blue-950 hover:text-white hover:no-underline hover:border-t-4 link {{ request()->is('contact') ? 'active' : '' }}"
-                    href="{{ url('contact') }}">Nous contacter</a>
+                    href="{{ url('demande_de_devis') }}">Nous contacter</a>
+
             </div>
         </div>
     </div>

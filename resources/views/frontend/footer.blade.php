@@ -3,7 +3,7 @@
         <div class="row ">
 
        <div class="col-md-6 mb-4 ">
-        <h1 class="mt-4 text-star">Retrouvez @airbagages sur les réseaux sociaux pour découvrir nos dernières offres.</h1>
+        <h1 class="mt-4 text-star">Retrouvez KaPouloCar sur les réseaux sociaux pour découvrir nos dernières offres.</h1>
 
        </div>
         <div class="col-md-6 mb-3 p-3  ">

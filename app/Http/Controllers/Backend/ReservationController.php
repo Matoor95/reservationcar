@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers\Backend;
 
-use App\Models\Car;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 
-class CarController extends Controller
+class ReservationController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +13,7 @@ class CarController extends Controller
     public function index()
     {
         //
-        return view('admin.car.index');
+        return view('admin.reservations.index');
     }
 
     /**
@@ -23,7 +22,6 @@ class CarController extends Controller
     public function create()
     {
         //
-        return view('admin.car.create');
     }
 
     /**
@@ -45,11 +43,9 @@ class CarController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Car $car)
+    public function edit(string $id)
     {
         //
-        return view('admin.car.edit', compact('car'));
-
     }
 
     /**
@@ -66,7 +62,5 @@ class CarController extends Controller
     public function destroy(string $id)
     {
         //
-        Car::findOrFail($id)->delete();
-        return redirect()->route('car.index')->with('success','Car supprimer avec succes');
     }
 }

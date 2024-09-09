@@ -56,7 +56,7 @@
     @include('frontend.footer')
     <!-- fin footer -->
     <div class="bg-light p">
-        <p class="mt-4 text-center text-dark">&copy; 2024 Tous droits réservés AIR BAGAGES</p>
+        <p class="mt-4 text-center text-dark">&copy; 2024 Tous droits réservés</p>
 
     </div>
     @livewireScripts
@@ -64,7 +64,7 @@
     <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
 
     <div class="fixed bottom-4 right-4">
-        <a href="https://wa.me/+221776540544" target="_blank" class="whatsapp-button ">
+        <a href="https://wa.me/+221776237060" target="_blank" class="whatsapp-button ">
             <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="w-20 h-20">
         </a>
     </div>

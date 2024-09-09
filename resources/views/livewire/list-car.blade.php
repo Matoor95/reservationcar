@@ -1,4 +1,3 @@
-
 <div class="mt-5">
     <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg p-4">
         {{-- titre et button creer --}}
@@ -7,8 +6,8 @@
                 <input type="text" class="block mt-1 rounded-m border-gray-300 w-full " placeholder="Rechercher"
                     wire:model="search">
             </div>
-            <a href="" class="bg-blue-500 rounded-md p-4 text-white text-sm">
-                Nouveau produit
+            <a href="{{ route('car.create') }}" class="bg-blue-500 rounded-md p-4 text-white text-sm">
+                Nouvelle voiture
             </a>
 
 
@@ -22,9 +21,18 @@
         @endif
 
         @if (Session::get('success'))
-        <div class="p-5">
-
-                <div class="block p-2 bg-green-500 text-white rounded-sm shadow-sm mt-2">{{ Session::get('error') }}
+            <div class="bg-teal-100 border-t-4 border-teal-500 rounded-b text-teal-900 px-2 py-3 mt-5 shadow-md"
+                role="alert">
+                <div class="flex">
+                    <div class="py-1"><svg class="fill-current h-6 w-6 text-teal-500 mr-4"
+                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                            <path
+                                d="M2.93 17.07A10 10 0 1 1 17.07 2.93 10 10 0 0 1 2.93 17.07zm12.73-1.41A8 8 0 1 0 4.34 4.34a8 8 0 0 0 11.32 11.32zM9 11V9h2v6H9v-4zm0-6h2v2H9V5z" />
+                        </svg></div>
+                    <div>
+                        <p class="font-bold">Notifcation</p>
+                        <p class="text-sm">{{ Session::get('success') }}</p>
+                    </div>
                 </div>
             </div>
         @endif
@@ -40,19 +48,19 @@
                                     id
                                 </th>
                                 <th class="text-sm font-medium text-gray-600  px-6 py-6">
-                                Photo
+                                    Photo
                                 </th>
                                 <th class="text-sm font-medium text-gray-600  px-6 py-6">
-                                   Model</th>
+                                    Model</th>
                                 <th class="text-sm font-medium text-gray-600  px-6 py-6">
-                                 libelle </th>
+                                    libelle </th>
                                 <th class="text-sm font-medium text-gray-600  px-6 py-6">
-                                 nombre de place</th>
+                                    nombre de place</th>
 
                                 <th class="text-sm font-medium text-gray-600  px-6 py-6">
-                                Annee</th>
+                                    Annee</th>
                                 <th class="text-sm font-medium text-gray-600  px-6 py-6">
-                                 Prix par jour</th>
+                                    Prix par jour</th>
 
                                 <th class="text-sm font-medium text-gray-600  px-6 py-6">
                                     Action
@@ -66,24 +74,25 @@
 
                                     <td class="text-sm font-medium text-gray-600  px-6 py-6">
                                         {{ $item->id }} </td>
-                                        <td class="text-sm font-medium text-gray-600  px-6 py-6">
-                                            <img src="{{ asset('storage/'.$item->chemin) }}" alt=""> </td>
+                                    <td class="text-sm font-medium text-gray-600  px-6 py-6">
+                                        <img src="{{ asset('storage/' . $item->chemin) }}" alt="" class="w-20">
+                                    </td>
                                     <td class="text-sm font-medium text-gray-600  px-6 py-6">
                                         {{ $item->model }} </td>
                                     <td class="text-sm font-medium text-gray-600  px-6 py-6">
                                         {{ $item->libelle }} </td>
                                     <td class="text-sm font-medium text-gray-600  px-6 py-6">
                                         {{ $item->seats }} </td>
-                                        <td class="text-sm font-medium text-gray-600  px-6 py-6">
-                                            {{ $item->year}} </td>
                                     <td class="text-sm font-medium text-gray-600  px-6 py-6">
-                                        {{ $item->price_per_day}} </td>
+                                        {{ $item->year }} </td>
+                                    <td class="text-sm font-medium text-gray-600  px-6 py-6">
+                                        {{ $item->price_per_day }} </td>
 
                                     <td class="flex items-center justify-center p-2 " style="vertical-align:middle">
 
 
-                                        {{-- <a class="p-1 text-teal-600 hover:bg-blue-300 hover:text-white rounded"
-                                            href="{{ route('produit.edit', $item->id) }}">
+                                        <a class="p-1 text-teal-600 hover:bg-blue-300 hover:text-white rounded"
+                                            href="{{ route('car.edit', $item->id) }}">
                                             <svg xmlns='http://www.w3.org/2000/svg' width='24' height='24'
                                                 viewBox="0 0 24 24">
                                                 <title>Editer</title>
@@ -95,15 +104,17 @@
                                                 </g>
                                             </svg>
                                         </a>
-                                        --}}
+
                                         <a href="#"
                                             class="p-1 text-red-600 hover:bg-red-600 hover:text-white rounded">
-                                            <form id="deleteForm" action="{{ route('car.destroy', $item->id) }}" method="POST">
+                                            <form id="deleteForm" action="{{ route('car.destroy', $item->id) }}"
+                                                method="POST">
                                                 <input name="_method" type="hidden" value="DELETE">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button class="show_confirm" title='Delete' type="submit">
-                                                    <svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox="0 0 24 24">
+                                                    <svg xmlns='http://www.w3.org/2000/svg' width='24'
+                                                        height='24' viewBox="0 0 24 24">
                                                         <title>Supprimer</title>
                                                         <g id="delete_2_line" fill='none' fill-rule='nonzero'>
                                                             <path
@@ -160,15 +171,15 @@
         </div>
     </div>
     <div id="confirmDeleteModal"
-    class="fixed inset-0 z-50 flex items-center justify-center hidden bg-gray-900 bg-opacity-50">
-    <div class="bg-white rounded-lg shadow-lg p-6">
-        <h2 class="text-lg font-semibold mb-4">Voulez-vous supprimer cette inscription  ?</h2>
-        <div class="flex justify-end">
-            <button id="cancelButton" class="mr-2 px-4 py-2 bg-gray-300 rounded hover:bg-gray-400">Non</button>
-            <button id="confirmButton" class="px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700">Oui</button>
+        class="fixed inset-0 z-50 flex items-center justify-center hidden bg-gray-900 bg-opacity-50">
+        <div class="bg-white rounded-lg shadow-lg p-6">
+            <h2 class="text-lg font-semibold mb-4">Voulez-vous supprimer cette voiture ?</h2>
+            <div class="flex justify-end">
+                <button id="cancelButton" class="mr-2 px-4 py-2 bg-gray-300 rounded hover:bg-gray-400">Non</button>
+                <button id="confirmButton" class="px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700">Oui</button>
+            </div>
         </div>
     </div>
-</div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>

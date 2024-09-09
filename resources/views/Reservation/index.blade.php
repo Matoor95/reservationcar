@@ -63,11 +63,10 @@
     @livewire('reservationlist')
 @endsection
 @section('service')
-    <section class=" dark:bg-gray-900">
+    <section class=" dark:bg-gray-900 m-5">
         <div class="flex flex-col items-center text-center">
             <p class="text-blue-950 text-3xl">
-                Avec Air Bagages, expédiez vos envois à l’international au meilleur prix et profitez d’un service de
-                livraison rapide et sécurisé. </p>
+                Avec KaPoulo Car, Reserver votre voiture a un clique </p>
 
         </div>
 

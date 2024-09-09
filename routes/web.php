@@ -17,7 +17,7 @@ use App\Http\Controllers\ReservationController;
 */
 
 Route::get('/', [AccueillController::class, 'index']);
-Route::get('/car/reserver/{id}',[ReservationController::class, 'create'])->name('reserver');
+Route::get('/car/reserver/{id}',[ReservationController::class, 'create'])->name('reserver')->middleware('auth');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

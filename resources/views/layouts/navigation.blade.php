@@ -6,7 +6,9 @@
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
                     <a href="{{ route('dashboard') }}">
-                        <x-application-logo class="block h-9 w-auto fill-current text-gray-800" />
+                        <img  src="{{ asset('images/WhatsApp Image 2024-09-07 at 02.27.40.jpeg') }}" class="block h-9 w-20 fill-current text-gray-800" />
+
+
                     </a>
                 </div>
 
@@ -14,6 +16,12 @@
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('car.index')" :active="request()->routeIs('car.index')">
+                        {{ __('Voiture') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('reservation')" :active="request()->routeIs('reservation')">
+                        {{ __('Reservation') }}
                     </x-nav-link>
                 </div>
             </div>

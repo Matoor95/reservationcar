@@ -1,6 +1,6 @@
 <div class="p-2 bg-white shadow-sm">
 
-    <form method="POST" wire:submit.prevent="store">
+    <form method="POST" wire:submit.prevent="update">
         @csrf
         @method('post')
 
