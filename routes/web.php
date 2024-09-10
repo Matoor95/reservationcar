@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AccueillController;
 use App\Http\Controllers\ReservationController;
@@ -18,6 +19,7 @@ use App\Http\Controllers\ReservationController;
 
 Route::get('/', [AccueillController::class, 'index']);
 Route::get('/car/reserver/{id}',[ReservationController::class, 'create'])->name('reserver')->middleware('auth');
+Route::get('/contact',[ContactController::class, 'create'])->name('contact');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

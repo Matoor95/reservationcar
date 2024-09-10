@@ -3,9 +3,11 @@
 namespace App\Livewire;
 
 use Carbon\Carbon;
+use App\Models\User;
 use Livewire\Component;
 use App\Models\Reservation;
 use Illuminate\Support\Facades\Auth;
+use App\Notifications\ReservationNotification;
 
 class ReservationCreate extends Component
 {
@@ -55,13 +57,17 @@ class ReservationCreate extends Component
         }
 
         // Créer la réservation
-        Reservation::create([
+        $reservation= Reservation::create([
             'car_id' => $this->car->id,
             'user_id' => Auth::id(),
             'start_date' => $this->start_date,
             'end_date' => $this->end_date,
             'total_price' => $this->total_price,
         ]);
+        $admins=User::where('role','admin')->get();
+        foreach ($admins as $admin) {
+            $admin->notify(new ReservationNotification($reservation));
+        }
 
         session()->flash('success', 'Votre réservation a été effectuée avec succès.');
         return redirect()->back();
