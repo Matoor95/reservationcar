@@ -2,7 +2,7 @@
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         @foreach($cars as $car)
             <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                <img src="{{ asset('storage/'.$car->chemin )}}" alt="{{ $car->libelle }}" class="w-full h-48 object-cover">
+                <img src="{{ asset('storage/'.$car->chemin )}}" alt="{{ $car->libelle }}" class="w-full h-80 object-cover">
                 <div class="p-6">
                     <h2 class="text-2xl font-bold mb-2">{{ $car->libelle }} - {{ $car->model }}</h2>
                     <p class="text-gray-700 mb-4">Année : {{ $car->year }}</p>
