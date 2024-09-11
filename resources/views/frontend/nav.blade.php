@@ -30,7 +30,17 @@
                         </svg>
                         Se connecter
                     </a>
+                    <a href="{{ route('register') }}"
+                    class="text-blue-950  text-xl no-underline border-b-2 border-red-500  hover:bg-red-500 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium  hover:no-underline rounded-lg  px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="w-6 h-6 mr-2">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M12 12c2.485 0 4.5-2.015 4.5-4.5S14.485 3 12 3 7.5 5.015 7.5 7.5 9.515 12 12 12zm0 1.5c-3.055 0-5.5 2.445-5.5 5.5v.75c0 .825.675 1.5 1.5 1.5h8c.825 0 1.5-.675 1.5-1.5v-.75c0-3.055-2.445-5.5-5.5-5.5z" />
+                    </svg>
+                    Creer un compte
+                </a>
                 </div>
+
             @endguest
             @auth
                 <div class="hidden md:flex items-center justify-end m-2 relative">
