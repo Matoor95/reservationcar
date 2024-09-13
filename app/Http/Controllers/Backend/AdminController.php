@@ -32,6 +32,9 @@ class AdminController extends Controller
     {
         //
     }
+    public function contact(){
+        return view('admin.contact');
+    }
 
     /**
      * Display the specified resource.

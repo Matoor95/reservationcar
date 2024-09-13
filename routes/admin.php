@@ -15,5 +15,5 @@ Route::prefix('car')->group(function(){
 Route::prefix('reservation')->group(function(){
 Route::get('/',[ReservationController::class, 'index'])->name('reservation');
 });
-
+Route::get('/contact',[AdminController::class, 'contact'])->name('contact.list');
 

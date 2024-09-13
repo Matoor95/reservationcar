@@ -24,7 +24,6 @@
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link rel="shortcut icon" href="{{ asset('assets/img/favicon.svg') }}" type="image/x-icon">
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-C6D9NXXQVD"></script>
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @livewireStyles
