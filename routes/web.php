@@ -20,6 +20,7 @@ use App\Http\Controllers\ReservationController;
 Route::get('/', [AccueillController::class, 'index']);
 Route::get('/car/reserver/{id}',[ReservationController::class, 'create'])->name('reserver')->middleware('auth');
 Route::get('/contact',[ContactController::class, 'create'])->name('contact');
+Route::get('/compte_client',[ReservationController::class, 'compteUser'])->name('compte_user')->middleware('auth');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

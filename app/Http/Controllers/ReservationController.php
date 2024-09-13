@@ -50,6 +50,10 @@ class ReservationController extends Controller
     {
         //
     }
+    public function compteUser(){
+        $reservations=Reservation::where('user_id',auth()->id())->get();
+        return view('Reservation.show',compact('reservations'));
+    }
 
     /**
      * Update the specified resource in storage.

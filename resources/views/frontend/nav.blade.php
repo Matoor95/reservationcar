@@ -113,7 +113,7 @@
             {{-- <a class="py-1 px-3 block no-underline font-bold rounded-sm hover:bg-blue-950 hover:text-white hover:no-underline hover:border-t-4 link {{ request()->is('demande_de_devis') ? 'active' : '' }}"
                 href="{{ url('demande_de_devis') }}">Air Bagages Plus</a> --}}
             <a class="py-1 px-3 block no-underline font-bold rounded-sm hover:bg-blue-950 hover:text-white hover:no-underline hover:border-t-4 link {{ request()->is('client/espace_client') || request()->is('login') ? 'active' : '' }}"
-                href="">Mon Compte Client</a>
+                href="{{ route('compte_user') }}">Mon Compte Client</a>
             <a class="py-1 px-3 block no-underline font-bold rounded-sm hover:bg-blue-950 hover:text-white hover:no-underline hover:border-t-4 link {{ request()->is('contact') ? 'active' : '' }}"
                 href="{{ url('contact') }}">Nous contacter</a>
         </div>
@@ -126,7 +126,7 @@
                 <a class="py-3 px-3 block no-underline font-bold rounded-sm hover:bg-blue-950 hover:text-white hover:no-underline hover:border-t-4 link {{ request()->is('/') ? 'active' : '' }}"
                     href="{{ url('/') }}">Reserver</a>
                 <a class="py-3 px-3 block no-underline font-bold rounded-sm hover:bg-blue-950 hover:text-white hover:no-underline hover:border-t-4 link {{ request()->is('suivre_son_colis') ? 'active' : '' }}"
-                    href="">Mon compte client</a>
+                    href="{{ route('compte_user') }}">Mon compte client</a>
                 <a class="py-3 px-3 block no-underline font-bold rounded-sm hover:bg-blue-950 hover:text-white hover:no-underline hover:border-t-4 link {{ request()->is('contact') ? 'active' : '' }}"
                     href="{{ route('contact') }}">Nous contacter</a>
 
