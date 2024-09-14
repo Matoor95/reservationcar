@@ -133,7 +133,7 @@
 
                                 </div>
                                 <div class="text-sm text-blue-950">
-                                    <span class="font-semibold">Date de fin:</span> {{ $reservation->start_date }}
+                                    <span class="font-semibold">Date de fin:</span> {{ $reservation->end_date }}
 
                                 </div>
 
